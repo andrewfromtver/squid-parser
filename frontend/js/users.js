@@ -33,7 +33,7 @@ const getUniqueUsers = (jsonData) => {
     let usersArray = []
     jsonData.forEach(e => {
         if (!usersArray.includes(e.client_identity) && e.client_identity) {
-            usersArray.push(e.client_identity)
+            if (e.client_identity !== '-') usersArray.push(e.client_identity)
         }
     })
     let usersEventsQty = []
