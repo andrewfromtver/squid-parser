@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  proxy:
+    container_name: squid-parser-proxy
+    build: ./proxy
+    volumes:
+      - ./backend/squid_log_dir:/var/log/squid
+    networks:
+      - squid-parser
+    restart: always
+    ports:
+      - "8000:8000"
+
+  backend:
+    container_name: squid-parser-backend
+    image: python:3.9.13-alpine
+    volumes:
+      - ./backend:/usr/src/squid-parser-agent
+      - ./backend/squid_log_dir:/usr/src/squid-parser-agent/log
+    depends_on:
+      - proxy
+    command: "python /usr/src/squid-parser-agent/log_parser.py"
+    networks:
+      - squid-parser
+    restart: always
+
+  frontend:
+    container_name: squid-parser-frontend
+    image: nginx:1.23.1-alpine
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+      - ./backend/json:/usr/share/nginx/html/squid-agent
+    depends_on:
+      - backend
+      - proxy
+    ports:
+      - "80:80"
+    networks:
+      - squid-parser
+    restart: always
+    
+networks:
+  squid-parser:
+    driver: bridge

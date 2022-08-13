@@ -1,0 +1,3 @@
+/backend/squid_log_dir/access.log
+/backend/squid_log_dir/cache.log
+/backend/json/squid.json

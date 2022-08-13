@@ -1,0 +1,8 @@
+FROM ubuntu:20.04
+
+ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get update; apt-get install -y squid apache2-utils
+COPY ./squid.conf /etc/squid/squid.conf
+COPY ./start_proxy.sh /start_proxy.sh
+CMD [ "/start_proxy.sh" ]
