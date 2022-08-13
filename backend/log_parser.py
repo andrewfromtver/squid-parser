@@ -28,4 +28,4 @@ with open("/usr/src/squid-parser-agent/log/access.log", "r") as file:
 with open("/usr/src/squid-parser-agent/json/squid.json", "w") as f:
     f.write(json.dumps(result))
 
-sleep(30)
+sleep(10)
