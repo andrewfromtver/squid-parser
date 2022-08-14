@@ -25,3 +25,16 @@ htpasswd -b /etc/squid/passwords sokolova sokolova
 ```
 
 You can manage this shell script or setup any othe squid integration to get proxy users list.
+
+**Usage tips**
+
+After runnin docker-compose comand you can find 3 up and running containers
+
+```
+IMAGE                  PORTS                                       NAMES
+nginx:1.23.1-alpine    0.0.0.0:80->80/tcp, :::80->80/tcp           squid-parser-frontend
+python:3.9.13-alpine                                               squid-parser-backend
+squid-parser_proxy     0.0.0.0:8000->8000/tcp, :::8000->8000/tcp   squid-parser-proxy
+```
+
+as you can see proxy is available at port 8000 and WEB UI at HTTP 80
