@@ -32,8 +32,8 @@ services:
       - ./frontend:/usr/share/nginx/html
       - ./backend/json:/usr/share/nginx/html/squid-agent
     depends_on:
-      - backend
       - proxy
+      - backend
     ports:
       - "80:80"
     networks:
