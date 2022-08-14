@@ -38,3 +38,13 @@ squid-parser_proxy     0.0.0.0:8000->8000/tcp, :::8000->8000/tcp   squid-parser-
 ```
 
 as you can see proxy is available at port 8000 and WEB UI at HTTP 80
+
+**And some screenshots in the end**
+
+![Screenshot_01](screenshot_01.png)
+![Screenshot_02](screenshot_02.png)
+![Screenshot_03](screenshot_03.png)
+![Screenshot_04](screenshot_04.png)
+![Screenshot_05](screenshot_05.png)
+![Screenshot_06](screenshot_06.png)
+![Screenshot_07](screenshot_07.png)
