@@ -24,7 +24,7 @@ htpasswd -b /etc/squid/passwords pavlova pavlova
 htpasswd -b /etc/squid/passwords sokolova sokolova
 ```
 
-You can manage this shell script or setup any othe squid integration to get proxy users list.
+You can manage this shell script or setup any other squid integration to get proxy users list.
 
 **Usage tips**
 
