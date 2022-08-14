@@ -43,6 +43,7 @@ as you can see proxy is available at port 8000 and WEB UI at HTTP 80
 
 ![Screenshot_01](screenshot_01.png)
 ![Screenshot_02](screenshot_02.png)
+![Screenshot_03](screenshot_03.png)
 ![Screenshot_04](screenshot_04.png)
 ![Screenshot_05](screenshot_05.png)
 ![Screenshot_06](screenshot_06.png)
